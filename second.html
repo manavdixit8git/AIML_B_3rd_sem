@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>BANK ACCOUNT</h1>
+        <script>
+            
+            let bankAccount = {
+                accountNumber: 123456789,
+                accountHolder: "John Doe",
+                balance: 1000,
+
+                deposit: function (amount) {
+                    this.balance += amount;
+                    console.log("Deposited: " + amount);
+                    console.log("New Balance: " + this.balance);
+                },
+
+                withdraw: function (amount) {
+                    if (amount <= this.balance) {
+                        this.balance -= amount;
+                        console.log("Withdrew: " + amount);
+                        console.log("New Balance: " + this.balance);
+                    } else {
+                        console.log("Insufficient funds for withdrawal.");
+                    }
+                },
+
+                displayAccountDetails: function () {
+                    console.log("Account Number: " + this.accountNumber);
+                    console.log("Account Holder: " + this.accountHolder);
+                    console.log("Balance: " + this.balance);
+                }
+            };
+
+            bankAccount.displayAccountDetails();
+            bankAccount.deposit(500);
+            bankAccount.withdraw(200);
+            bankAccount.withdraw(1500); 
+        </script>
+    </body>
+</html>
